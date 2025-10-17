@@ -30,16 +30,10 @@
     "parameterSet": {
       "appArgs": [
         {
-          "name": "Greeting",
-          "description": "Choose a greeting to give to your target",
+          "name": "Run Script",
+          "description": "Choose which HEC-RAS driver to run (run_steady.sh or run_unsteady.sh).",
           "inputMode": "REQUIRED",
-          "arg": "hello"
-        },
-        {
-          "name": "Target",
-          "description": "Whom to address your greeting",
-          "inputMode": "REQUIRED",
-          "arg": "world"
+          "arg": "run_steady.sh"
         }
       ],
       "containerArgs": [
@@ -80,7 +74,16 @@
         "includeLaunchFiles": true
       }
     },
-    "fileInputs": [],
+    "fileInputs": [
+      {
+        "name": "project-archive",
+        "description": "Optional ZIP or TAR.GZ archive with HEC-RAS project files (extracted into the Muncie case before running).",
+        "inputMode": "OPTIONAL",
+        "autoMountLocal": true,
+        "sourceUrl": null,
+        "targetPath": "project_archive"
+      }
+    ],
     "fileInputArrays": [],
     "nodeCount": 1,
     "coresPerNode": 1,
